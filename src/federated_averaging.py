@@ -50,9 +50,11 @@ print("\n Successfully averaged model parameters")
 global_model = LogisticRegression(max_iter=1000, class_weight='balanced')
 
 # 2. Manually set its learned parameters to our new averages
-# We must .fit() it first to initialize its attributes
-# We use a dummy dataset [0, 1] just to enable setting the parameters
-global_model.fit(np.array([[0], [1]]), np.array([0, 1]))
+# To initialize the model with correct shape:
+# Use a dummy X with the same number of features as your coefficients
+n_features = average_coef.shape[1]
+global_model.fit(np.zeros((2, n_features)), np.array([0, 1]))
+# Now set the averaged parameters
 global_model.coef_ = average_coef
 global_model.intercept_ = average_intercept
 
