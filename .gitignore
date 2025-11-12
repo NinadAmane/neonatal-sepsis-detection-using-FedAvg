@@ -7,3 +7,4 @@ models/
 __pycache__/
 .ipynb_checkpoints/
 scripts/preprocess_data(dont run).ipynb
+data/federated_cleaned

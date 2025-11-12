@@ -10,6 +10,4 @@ kaggle
 kagglehub
 syft
 tensorflow-federated
-torch
-torchvision
-torchaudio
+
